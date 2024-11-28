@@ -27,10 +27,14 @@ jobs:
             any::rmarkdown
             any::ggplot2
 
-      - name: Render example slides
+      - name: 🤖 Render example slides
         uses: quarto-dev/quarto-actions/render@v2
         with:
           path: example.qmd
+
+      - name: 🗂️ Looking for slides
+        run: |
+          ls -R _slides || echo "_slides directory does not exist"
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
