@@ -1,0 +1,305 @@
+---
+title: "Detective Example"
+format:
+  revealjs:
+    theme: custom.scss
+    highlight-style: atom-one
+    slideNumber: true
+revealjs-plugins:
+  - detective
+---
+
+```{r}
+#| echo: false
+#| eval: true
+library(ggplot2)
+```
+
+# Welcome to Detective
+
+## Highlight the code
+
+Do you know how to create a plot?
+
+:::: {.columns}
+::: {.column width="40%"}
+```{r}
+#| echo: true
+#| eval: false
+ggplot(data = iris) +
+  aes(
+    x = Sepal.Length,
+    y = Sepal.Width
+  ) +
+  geom_point()
+```
+:::
+
+::: {.column width="60%"}
+```{r}
+#| echo: false
+#| eval: true
+#| fig-height: 9
+ggplot(data = iris) +
+  aes(
+    x = Sepal.Length,
+    y = Sepal.Width
+  ) +
+  geom_point() +
+  theme_grey(base_size = 20)
+```
+:::
+::::
+
+## Highlight the code
+
+First, use `ggplot` function to select the data
+
+::::: {.columns}
+:::: {.column width="40%"}
+:::{.detective data-detective-search="ggplot"}
+```{r}
+#| echo: true
+#| eval: false
+ggplot(data = iris) +
+  aes(
+    x = Sepal.Length,
+    y = Sepal.Width
+  ) +
+  geom_point()
+```
+:::
+::::
+
+:::: {.column width="60%"}
+```{r}
+#| echo: false
+#| eval: true
+#| fig-height: 9
+ggplot(data = iris) +
+  aes(
+    x = Sepal.Length,
+    y = Sepal.Width
+  ) +
+  geom_point() +
+  theme_grey(base_size = 20)
+```
+::::
+:::::
+
+
+## Highlight the code
+
+Then, use `aes` function to select the variables
+
+::::: {.columns}
+:::: {.column width="40%"}
+:::{.detective data-detective-search="ggplot, aes"}
+```{r}
+#| echo: true
+#| eval: false
+ggplot(data = iris) +
+  aes(
+    x = Sepal.Length,
+    y = Sepal.Width
+  ) +
+  geom_point()
+```
+:::
+::::
+
+:::: {.column width="60%"}
+```{r}
+#| echo: false
+#| eval: true
+#| fig-height: 9
+ggplot(data = iris) +
+  aes(
+    x = Sepal.Length,
+    y = Sepal.Width
+  ) +
+  geom_point() +
+  theme_grey(base_size = 20)
+```
+::::
+:::::
+
+## Highlight the code
+
+Finally, use `geom_*` function to create a geometric element
+
+::::: {.columns}
+:::: {.column width="40%"}
+:::{.detective data-detective-search="ggplot, aes, geom_point"}
+```{r}
+#| echo: true
+#| eval: false
+ggplot(data = iris) +
+  aes(
+    x = Sepal.Length,
+    y = Sepal.Width
+  ) +
+  geom_point()
+```
+:::
+::::
+
+:::: {.column width="60%"}
+```{r}
+#| echo: false
+#| eval: true
+#| fig-height: 9
+ggplot(data = iris) +
+  aes(
+    x = Sepal.Length,
+    y = Sepal.Width
+  ) +
+  geom_point() +
+  theme_grey(base_size = 20)
+```
+::::
+:::::
+
+# Oh, that's nice!
+
+## Highlight the code
+
+Use `.detective` and `data-detective-search` to search words to highlight
+
+::::: {.columns}
+:::: {.column width="40%"}
+:::{.detective data-detective-search="ggplot, aes, geom_point"}
+```{r}
+#| echo: true
+#| eval: false
+ggplot(data = iris) +
+  aes(
+    x = Sepal.Length,
+    y = Sepal.Width
+  ) +
+  geom_point()
+```
+:::
+::::
+
+:::: {.column width="60%"}
+```
+:::{.detective data-detective-search="ggplot, aes, geom_point"}
+
+your chunk here...
+
+:::
+```
+::::
+:::::
+
+## Highlight the code
+
+Use `data-detective-bg-color` to modify the background color
+
+::::: {.columns}
+:::: {.column width="40%"}
+:::{.detective data-detective-search="ggplot, aes, geom_point" data-detective-bg-color="#4287f5"}
+```{r}
+#| echo: true
+#| eval: false
+ggplot(data = iris) +
+  aes(
+    x = Sepal.Length,
+    y = Sepal.Width
+  ) +
+  geom_point()
+```
+:::
+::::
+
+:::: {.column width="60%"}
+```
+:::{.detective data-detective-search="ggplot, aes, geom_point" data-detective-bg-color="#4287f5"}
+
+your chunk here...
+
+:::
+```
+::::
+:::::
+
+:::::: {.fragment}
+Use hex colors or CSS variables
+
+::::: {.columns}
+:::: {.column width="40%"}
+:::{.detective data-detective-search="ggplot, aes, geom_point" data-detective-bg-color="var(--r-primary-color)"}
+```{r}
+#| echo: true
+#| eval: false
+ggplot(data = iris) +
+  aes(
+    x = Sepal.Length,
+    y = Sepal.Width
+  ) +
+  geom_point()
+```
+:::
+::::
+
+:::: {.column width="60%"}
+```
+:::{.detective data-detective-search="ggplot, aes, geom_point" data-detective-bg-color="var(--r-primary-color)"}
+
+your chunk here...
+
+:::
+```
+
+_* see custom.scss_
+::::
+:::::
+::::::
+
+## Highlight the code
+
+Combine multiple `.detective`
+
+::::: {.columns}
+:::: {.column width="40%"}
+:::{.detective data-detective-search="ggplot"}
+:::{.detective data-detective-search="aes" data-detective-bg-color="var(--r-primary-color)"}
+:::{.detective data-detective-search="geom_point" data-detective-bg-color="black" data-detective-code-color="#fff"}
+```{r}
+#| echo: true
+#| eval: false
+ggplot(data = iris) +
+  aes(
+    x = Sepal.Length,
+    y = Sepal.Width
+  ) +
+  geom_point()
+```
+:::
+:::
+:::
+::::
+
+:::: {.column width="60%"}
+```
+:::{.detective data-detective-search="ggplot"}
+:::{.detective data-detective-search="aes" data-detective-bg-color="var(--r-primary-color)"}
+:::{.detective data-detective-search="geom_point" data-detective-bg-color="black" data-detective-code-color="#fff"}
+
+your chunk here...
+
+:::
+:::
+:::
+```
+::::
+:::::
+
+## Highlight the code
+
+- `data-detective-search` search for words to highlight. Use `,` for multiple words.
+
+- `data-detective-bg-color` background color. Default is `yellow`
+
+- `data-detective-code-color` code color. Default is `black`
