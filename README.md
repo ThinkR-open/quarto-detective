@@ -14,4 +14,25 @@ quarto add ThinkR-open/quarto-detective
 
 ## Usage
 
-_todo_
+Discover the `detective` tool in the presentation below:
+
+[https://thinkr-open.github.io/quarto-detective/](https://thinkr-open.github.io/quarto-detective/)
+
+## Example
+
+Highlight `ggplot` and `aes` in a chunk:
+
+:::{.detective data-detective-search="ggplot, aes"}
+
+```{r}
+#| echo: true
+#| eval: false
+ggplot(data = iris) +
+  aes(
+    x = Sepal.Length,
+    y = Sepal.Width
+  ) +
+  geom_point()
+```
+
+:::
