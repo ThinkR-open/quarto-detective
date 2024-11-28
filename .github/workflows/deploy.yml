@@ -30,7 +30,7 @@ jobs:
       - name: 🤖 Render example slides
         uses: quarto-dev/quarto-actions/render@v2
         with:
-          path: example.qmd
+          path: index.qmd
 
       - name: 🗂️ Looking for slides
         run: |
