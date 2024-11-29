@@ -1,3 +1,5 @@
+[![Quarto Publish](https://github.com/ThinkR-open/quarto-detective/actions/workflows/deploy.yml/badge.svg)](https://github.com/ThinkR-open/quarto-detective/actions/workflows/deploy.yml)
+
 # Detective Extension For Quarto
 
 This extension provides a `detective` tool for RevealJS presentations. 🔎
