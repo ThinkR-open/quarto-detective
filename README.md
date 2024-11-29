@@ -22,8 +22,8 @@ Discover the `detective` tool in the presentation below:
 
 Highlight `ggplot` and `aes` in a chunk:
 
+````
 :::{.detective data-detective-search="ggplot, aes"}
-
 ```{r}
 #| echo: true
 #| eval: false
@@ -34,5 +34,7 @@ ggplot(data = iris) +
   ) +
   geom_point()
 ```
-
 :::
+````
+
+![example](assets/example.png)
