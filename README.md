@@ -16,6 +16,13 @@ quarto add ThinkR-open/quarto-detective
 
 ## Usage
 
+Add the plugin to your quarto document:
+
+```yaml
+revealjs-plugins:
+  - detective
+```
+
 Discover the `detective` tool in the presentation below:
 
 [https://thinkr-open.github.io/quarto-detective/](https://thinkr-open.github.io/quarto-detective/)
